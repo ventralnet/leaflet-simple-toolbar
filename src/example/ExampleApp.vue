@@ -7,6 +7,8 @@
   import 'leaflet';
   import 'leaflet/dist/leaflet.css';
 
+  import '../lib/leaflet-simple-toolbar';
+
   export default {
     mounted() {
       const mapEle = this.$refs.mapContainer;
@@ -18,6 +20,8 @@
         noWrap: true,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
+
+      new L.Control.SimpleToolbar().addTo(map);
     },
   };
 </script>
