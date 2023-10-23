@@ -8,6 +8,7 @@ import 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 import '../lib/leaflet-simple-toolbar';
+import '../lib/leaflet-simple-toolbar.css';
 
 export default {
   mounted() {
