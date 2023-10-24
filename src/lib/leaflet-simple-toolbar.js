@@ -1,29 +1,38 @@
+import '../lib/leaflet-simple-toolbar.css';
+
 L.Control.SimpleToolbar = L.Control.extend({
   initialize(options) {
     if (!options.actions) {
       throw Error('Expecting a list of actions in options');
     }
     L.Control.prototype.initialize.call(this, options);
+    this._actions = options.actions;
   },
 
   onAdd(map) {
     const container = L.DomUtil.create('div', 'leaflet-simple-toolbar');
+    L.DomEvent.disableClickPropagation(container);
     this._initializeActionListLayout(container);
+    map._simpleToolbar = this;
     return container;
   },
 
   _initializeActionListLayout(container) {
     const listEle = L.DomUtil.create('ul', 'leaflet-bar', container);
-    this.options.actions.forEach((action) => {
+    this._actions.forEach((action) => {
       const actionLiEle = L.DomUtil.create('li', null, listEle);
-      // For each action
-      const anchorEle = L.DomUtil.create('a', null, actionLiEle);
-      anchorEle.innerHTML = 'H';
+      action._container = actionLiEle;
+      L.Util.stamp(action);
+      action._map = this._map;
 
-      const actionLiEle2 = L.DomUtil.create('li', null, listEle);
-      // For each action
-      const anchorEle2 = L.DomUtil.create('a', null, actionLiEle2);
-      anchorEle.innerHTML = '@';
+      const anchorEle = L.DomUtil.create('a', null, actionLiEle);
+      anchorEle.innerHTML = action.iconHtml;
+      anchorEle.title = action.tooltip;
+
+      L.DomEvent 
+        .addListener(anchorEle, 'click', L.DomEvent.stopPropagation)
+        .addListener(anchorEle, 'click', L.DomEvent.preventDefault)
+        .addListener(anchorEle, 'click', action.handler, action);
     });
   },
 });

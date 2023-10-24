@@ -1,4 +1,5 @@
 .leaflet-simple-toolbar {
+  --toolbar-control-dimensions: 2em;
 }
 
 .leaflet-simple-toolbar ul {
@@ -7,9 +8,14 @@
   margin: 0;
 }
 
+.leaflet-simple-toolbar ul li.disabled a {
+  cursor: not-allowed;
+  background-color: #777;
+}
+
 .leaflet-simple-toolbar ul li a {
   cursor: pointer;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
+  min-width: var(--toolbar-control-dimensions);
+  min-height: var(--toolbar-control-dimensions);
+  line-height: var(--toolbar-control-dimensions);
 }

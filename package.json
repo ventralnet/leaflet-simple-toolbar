@@ -1,7 +1,7 @@
 {
-  "name": "leaflet-simple-toolbar",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@ventralnet/leaflet-simple-toolbar",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",

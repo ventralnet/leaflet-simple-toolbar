@@ -25,10 +25,17 @@ export default {
     new L.Control.SimpleToolbar({
       actions: [
         {
-          iconHtml: '',
-          tooltip: 'I am a tooltip',
+          iconHtml: '<span>H</span>',
+          tooltip: 'I am tooltip H',
           handler() {
-            alert('clicked');
+            alert('clicked H');
+          },
+        },
+        {
+          iconHtml: '<span>A</span>',
+          tooltip: 'I am tooltip A',
+          handler() {
+            alert('clicked A');
           },
         }
       ]
