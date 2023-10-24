@@ -37,3 +37,18 @@ L.Control.SimpleToolbar = L.Control.extend({
   },
 });
 
+L.Control.SimpleToolbar.Action = L.Class.extend({
+  initialize(options) {
+    L.Util.setOptions(this, options);
+    this.iconHtml = this.options.iconHtml;
+    this.tooltip = this.options.tooltip;
+  },
+
+  disableControl() {
+    L.DomUtil.addClass(this._container, 'disabled');
+  },
+
+  enableControl() {
+    L.DomUtil.removeClass(this._container, 'disabled');
+  }
+});
