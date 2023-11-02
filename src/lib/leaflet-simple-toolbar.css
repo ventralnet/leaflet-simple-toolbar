@@ -19,3 +19,8 @@
   min-height: var(--toolbar-control-dimensions);
   line-height: var(--toolbar-control-dimensions);
 }
+
+.leaflet-simple-toolbar.leaflet-control ul.leaflet-bar li:not(first-child) a,
+.leaflet-simple-toolbar.leaflet-control ul.leaflet-bar li:not(last-child) a {
+  border-radius: 0;
+}
