@@ -10,7 +10,11 @@
 
 .leaflet-simple-toolbar ul li.disabled a {
   cursor: not-allowed;
-  background-color: #777;
+  background-color: #dfdfdf;
+}
+
+.leaflet-simple-toolbar ul li.disabled a i {
+  color: grey;
 }
 
 .leaflet-simple-toolbar ul li a {

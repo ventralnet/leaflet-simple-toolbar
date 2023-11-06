@@ -46,9 +46,15 @@ L.Control.SimpleToolbar.Action = L.Class.extend({
 
   disableControl() {
     L.DomUtil.addClass(this._container, 'disabled');
+    if (this.options.disabledTooltip) {
+      const anchor = this._container.querySelector('a');
+      anchor.setAttribute('title', this.options.disabledTooltip);
+    }
   },
 
   enableControl() {
     L.DomUtil.removeClass(this._container, 'disabled');
+    const anchor = this._container.querySelector('a');
+    anchor.setAttribute('title', this.options.tooltip);
   }
 });
