@@ -30,6 +30,14 @@ export default {
       },
     });
 
+    const disabledAction = new L.Control.SimpleToolbar.Action({
+      iconHtml: '<span><b>D</b></span>',
+      tooltip: 'Disabled action example, you cant interact with this',
+      handler() {
+        alert('This alert won\'t show because i am disabled :(');
+      },
+    });
+
     new L.Control.SimpleToolbar({
       actions: [
         {
@@ -46,9 +54,12 @@ export default {
             alert('click');
           },
         },
+        disabledAction,
         classBasedAction,
       ]
     }).addTo(map);
+
+    disabledAction.disableControl();
   },
 };
 </script>

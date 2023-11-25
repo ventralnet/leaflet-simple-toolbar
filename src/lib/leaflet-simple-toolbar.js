@@ -46,6 +46,9 @@ L.Control.SimpleToolbar.Action = L.Class.extend({
   },
 
   disableControl() {
+    if (!this._container) {
+      throw Error('Please add the toolbar to the map first before you disableControl');
+    }
     L.DomUtil.addClass(this._container, 'disabled');
     if (this.options.disabledTooltip) {
       const anchor = this._container.querySelector('a');
@@ -54,6 +57,9 @@ L.Control.SimpleToolbar.Action = L.Class.extend({
   },
 
   enableControl() {
+    if (!this._container) {
+      throw Error('Please add the toolbar to the map first before you enableControl');
+    }
     L.DomUtil.removeClass(this._container, 'disabled');
     const anchor = this._container.querySelector('a');
     anchor.setAttribute('title', this.options.tooltip);
