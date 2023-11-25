@@ -1,5 +1,9 @@
 # leaflet-simple-toolbar #
 
+## Demo ##
+
+[jsFiddle](https://jsfiddle.net/ventralnet/7khfvzgt/13/)
+
 ## Installation ##
 You must include the distribution javascript file and css file in your application
 
