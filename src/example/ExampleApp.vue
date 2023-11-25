@@ -22,6 +22,14 @@ export default {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    const classBasedAction = new L.Control.SimpleToolbar.Action({
+      iconHtml: '<span><b>H</b></span>',
+      tooltip: 'This will show when you hover',
+      handler() {
+        alert('class based action');
+      },
+    });
+
     new L.Control.SimpleToolbar({
       actions: [
         {
@@ -37,7 +45,8 @@ export default {
           handler() {
             alert('click');
           },
-        }
+        },
+        classBasedAction,
       ]
     }).addTo(map);
   },
