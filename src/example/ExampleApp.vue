@@ -60,6 +60,9 @@ export default {
     }).addTo(map);
 
     disabledAction.disableControl();
+    setTimeout(() => {
+      disabledAction.enableControl();
+    }, 5000);
   },
 };
 </script>

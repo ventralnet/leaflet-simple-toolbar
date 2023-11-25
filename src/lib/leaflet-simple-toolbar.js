@@ -50,8 +50,9 @@ L.Control.SimpleToolbar.Action = L.Class.extend({
       throw Error('Please add the toolbar to the map first before you disableControl');
     }
     L.DomUtil.addClass(this._container, 'disabled');
+    const anchor = this._container.querySelector('a');
+    L.DomEvent.off(anchor, 'click', this.handler, this);
     if (this.options.disabledTooltip) {
-      const anchor = this._container.querySelector('a');
       anchor.setAttribute('title', this.options.disabledTooltip);
     }
   },
@@ -62,6 +63,7 @@ L.Control.SimpleToolbar.Action = L.Class.extend({
     }
     L.DomUtil.removeClass(this._container, 'disabled');
     const anchor = this._container.querySelector('a');
+    L.DomEvent.on(anchor, 'click', this.handler, this);
     anchor.setAttribute('title', this.options.tooltip);
   }
 });
