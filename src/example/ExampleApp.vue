@@ -25,17 +25,17 @@ export default {
     new L.Control.SimpleToolbar({
       actions: [
         {
-          iconHtml: '<span>H</span>',
-          tooltip: 'I am tooltip H',
+          iconHtml: '<i class="fa-solid fa-circle-info"></i>',
+          tooltip: 'This will show when you hover',
           handler() {
-            alert('clicked H');
+            alert('leafet simple toolbar!');
           },
         },
         {
-          iconHtml: '<span>A</span>',
-          tooltip: 'I am tooltip A',
+          iconHtml: '<i class="fas fa-question-circle"></i>',
+          tooltip: 'Another action',
           handler() {
-            alert('clicked A');
+            alert('click');
           },
         }
       ]
