@@ -25,6 +25,9 @@ npm run dev # runs the sample application
 
 ## Use ##
 
+![alt text](https://raw.githubusercontent.com/ventralnet/leaflet-simple-toolbar/master/screenshot.png?token=GHSAT0AAAAAACKXTOAVOHPFBIFAIDTF7PHUZLDVCWA)
+
+
 You can either provide your toolbar options as plain old javascript objects, or you can use the utility class L.Control.SimpleToolbar.Action.
 
 An additional benefit of using L.Control.SimpleToolbar.Action is that the base class provides the disableControl and enableControl methods allowing you to enable and disable interacting with the action button.  Plain old javascript object configurations don't provide this ability.
