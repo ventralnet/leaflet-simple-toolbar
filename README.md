@@ -4,6 +4,9 @@
 
 [jsFiddle](https://jsfiddle.net/ventralnet/7khfvzgt/13/)
 
+![Screenshot](https://raw.githubusercontent.com/ventralnet/leaflet-simple-toolbar/master/screenshot.png?token=GHSAT0AAAAAACKXTOAVOHPFBIFAIDTF7PHUZLDVCWA)
+
+
 ## Installation ##
 You must include the distribution javascript file and css file in your application
 
@@ -24,9 +27,6 @@ npm run dev # runs the sample application
 ```
 
 ## Use ##
-
-![alt text](https://raw.githubusercontent.com/ventralnet/leaflet-simple-toolbar/master/screenshot.png?token=GHSAT0AAAAAACKXTOAVOHPFBIFAIDTF7PHUZLDVCWA)
-
 
 You can either provide your toolbar options as plain old javascript objects, or you can use the utility class L.Control.SimpleToolbar.Action.
 
