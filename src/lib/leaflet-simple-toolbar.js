@@ -21,6 +21,7 @@ L.Control.SimpleToolbar = L.Control.extend({
     const listEle = L.DomUtil.create('ul', 'leaflet-bar', container);
     this._actions.forEach((action) => {
       const actionLiEle = L.DomUtil.create('li', null, listEle);
+      action._toolbar = this;
       action._container = actionLiEle;
       L.Util.stamp(action);
       action._map = this._map;
@@ -29,7 +30,7 @@ L.Control.SimpleToolbar = L.Control.extend({
       anchorEle.innerHTML = action.iconHtml;
       anchorEle.title = action.tooltip;
 
-      L.DomEvent 
+      L.DomEvent
         .addListener(anchorEle, 'click', L.DomEvent.stopPropagation)
         .addListener(anchorEle, 'click', L.DomEvent.preventDefault)
         .addListener(anchorEle, 'click', action.handler, action);
@@ -45,6 +46,16 @@ L.Control.SimpleToolbar.Action = L.Class.extend({
     if (this.options.handler) {
       this.handler = this.options.handler;
     }
+  },
+
+  setActive() {
+    const toolbarContainer = this._toolbar;
+    toolbarContainer._actions.forEach((action) => {
+      if (action._container) {
+        L.DomUtil.removeClass(action._container, 'is-active');
+      }
+    });
+    L.DomUtil.addClass(this._container, 'is-active');
   },
 
   disableControl() {

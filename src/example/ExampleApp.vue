@@ -60,9 +60,7 @@ export default {
     }).addTo(map);
 
     disabledAction.disableControl();
-    setTimeout(() => {
-      disabledAction.enableControl();
-    }, 5000);
+    classBasedAction.setActive();
   },
 };
 </script>
@@ -71,6 +69,10 @@ export default {
 .map {
   height: 100vh;
   width: 100%;
+}
+
+:deep(li.is-active a) {
+  background-color: green;
 }
 </style>
 
