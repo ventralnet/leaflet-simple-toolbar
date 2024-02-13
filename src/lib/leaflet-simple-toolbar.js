@@ -19,7 +19,9 @@ L.Control.SimpleToolbar = L.Control.extend({
 
   deactivateAll() {
     this._actions.forEach((action) => {
-      action.setInactive();
+      if (action.setInactive) {
+        action.setInactive();
+      }
     });
   },
 
