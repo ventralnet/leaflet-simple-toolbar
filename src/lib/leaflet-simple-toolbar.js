@@ -17,6 +17,12 @@ L.Control.SimpleToolbar = L.Control.extend({
     return container;
   },
 
+  deactivateAll() {
+    this._actions.forEach((action) => {
+      action.setInactive();
+    });
+  },
+
   _initializeActionListLayout(container) {
     const listEle = L.DomUtil.create('ul', 'leaflet-bar', container);
     this._actions.forEach((action) => {
