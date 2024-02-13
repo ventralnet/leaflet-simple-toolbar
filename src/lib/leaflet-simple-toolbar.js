@@ -65,12 +65,6 @@ L.Control.SimpleToolbar.Action = L.Class.extend({
   },
 
   setActive() {
-    const toolbarContainer = this._toolbar;
-    toolbarContainer._actions.forEach((action) => {
-      if (action._container) {
-        L.DomUtil.removeClass(action._container, 'is-active');
-      }
-    });
     L.DomUtil.addClass(this._container, 'is-active');
   },
 
