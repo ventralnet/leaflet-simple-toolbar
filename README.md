@@ -4,7 +4,7 @@
 
 [jsFiddle](https://jsfiddle.net/ventralnet/7khfvzgt/13/)
 
-![Screenshot](https://raw.githubusercontent.com/ventralnet/leaflet-simple-toolbar/master/screenshot.png?token=GHSAT0AAAAAACKXTOAVOHPFBIFAIDTF7PHUZLDVCWA)
+![Screenshot](screenshot.png)
 
 
 ## Installation ##
